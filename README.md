@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EVM Price Widget
+
+_A decentralized and lightweight real-time price widget for EVM — bringing trustless token price updates directly from the blockchain._
+
+> A Minimalist On-chain Price Display dApp — No Centralized Data Needed
+
+## Overview
+
+The **EVM Price Widget** is a decentralized application (dApp) that delivers **real-time token price updates** for EVM users. It eliminates the need for **centralized data providers** by fetching price data **directly from the blockchain**, making it more transparent, censorship-resistant, and resilient.
+
+- **Problem it solves:** Existing widgets rely on centralized APIs that may become unavailable or manipulated.
+- **Who it’s for:** Developers, traders, and users of EVM looking for a reliable and trustless way to view token prices.
+- **What makes it unique:** The widget fetches and renders price data purely on-chain — no intermediaries involved.
+
+## Why This Project?
+
+Most price display tools are tightly coupled with centralized APIs or services. This project was inspired by the growing demand for **trustless DeFi experiences** and aims to:
+
+- **Remove reliance on off-chain APIs**
+- **Ensure high availability** through decentralized sources
+- **Keep the UI lightweight, embeddable, and easy to integrate**
+
+By focusing on EVM, it showcases a clean model for how DEXs can serve their communities with simple, on-chain utilities.
+
+## Features
+
+- Fully **on-chain price fetching** (no centralized API calls)
+- Lightweight and responsive **widget UI**
+- **Real-time updates** without backend servers
+- Easily **embeddable** into third-party websites or dashboards
+- Minimal setup and **developer-friendly**
+
+## Roadmap
+
+- [x] Phase 1: MVP widget displaying token prices on EVM
+- [ ] Phase 2: Add support for more tokens
+- [ ] Phase 3: Add historical charting using on-chain data
+- [ ] Phase 4: Community-driven theming and customization options
+
+## Tech Stack
+
+**Blockchain:**
+Solidity · Viem · Wagmi · RainbowKit
+
+**Web:**
+Next.js · React · Tailwind CSS
+
+**Cloud:**
+Vercel · GitHub Actions (CI/CD)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js & npm
+- Git
+- Wallet like MetaMask
+
+### Installation
 
 ```bash
+git clone https://github.com/yourusername/EVM-widget.git
+cd EVM-widget
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env` file in the root with the following keys:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_ENERGISWAP_API_URL=
+NEXT_PUBLIC_COINGECKO_API_URl=
+NEXT_PUBLIC_RAINBOWKIT_PROJECT_ID=
+NEXT_PUBLIC_ETHEREUM_MAINNET_RPC_URL=
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Run development server
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run tests
+npx hardhat test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can now embed or integrate the widget into any web application or dashboard!
 
-## Deploy on Vercel
+## Architecture
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[Frontend (React/Next.js)] → [Web3 Provider] → [EVM Smart Contract]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+- **Cloud:** Deployed on Vercel
+- **Smart Contracts:**
+  - Network: Ethereum / Energi (or specify)
+  - Contract Address: `0xYourContractAddress`
+  - Block Explorer: [View on Explorer](https://explorer.url/0xYourContractAddress)
+
+## Contributing
+
+We welcome contributions to improve the widget:
+
+1. Fork the repo
+2. Create your branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes
+4. Push to your fork: `git push origin feature/your-feature-name`
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Credits
+
+- Inspired by the DeFi community’s need for trustless UI components
+- Built by John Rommel Octaviano
+- Powered by EVM · Ethereum · Vercel · Web3.js
